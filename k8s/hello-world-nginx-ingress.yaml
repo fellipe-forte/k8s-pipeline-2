@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: hello-world
+spec:
+  rules:
+  - host: kube-master
+    http:
+      paths:
+      - backend:
+          serviceName: ingress-nginx
+          servicePort: 443
+        path: /nginx_status

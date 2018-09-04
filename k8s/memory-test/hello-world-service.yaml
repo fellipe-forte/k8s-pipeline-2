@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-app-memory
+  namespace: hello-world
+  labels:
+    app: hello-app-memory
+spec:
+  selector:
+    app: hello-app-memory
+    tier: web
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: NodePort
